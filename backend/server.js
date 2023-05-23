@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 
 const userRoute = require('./routes/userRoute');
+const userRegister = require('./routes/userRegister');
+const contactUs = require('./routes/contactUsRoute');
 const cors = require("cors");
 app.use(cors());
 
@@ -20,6 +22,9 @@ mongoose
         console.log('error', error);
     })
 
+
     app.use("/api/user", userRoute);
+    app.use("/api/register", userRegister);
+    app.use("/api/contactUs", userRegister);
 
 // app.listen(4000) 

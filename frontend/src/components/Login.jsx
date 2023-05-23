@@ -8,10 +8,25 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleSubmit = () =>{
-        console.log("bs yhi kaam rh gya hy");
-    }
-
+    async function registerUser(e) {
+        e.preventDefault();
+        const response = await fetch('http://localhost:4000/api/register', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            password
+          })
+        });
+      
+        const data = await response.json();
+      
+        console.log(data);
+      }
+      
 
     return (
         <div className="container my-2">
@@ -25,7 +40,7 @@ function Login() {
                     </div>
 
                 } */}
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={registerUser}>
                     <div className="mb-3">
                         <label className="form-label">Name</label>
                         <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />

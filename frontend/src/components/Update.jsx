@@ -38,27 +38,30 @@ function Update() {
         e.preventDefault();
         const UpdateUser = { name, email, age };
 
-        const response = await fetch(`http://localhost:4000/api/user/${id}`, {
-
-            method: "PATCH",
-            body: JSON.stringify(UpdateUser),
-            headers: {
-                "Content-type" : "application/json",
+        try {
+            const response = await fetch(`http://localhost:4000/api/user/${id}`, {
+              method: "PATCH",
+              body: JSON.stringify(UpdateUser),
+              headers: {
+                "Content-type": "application/json",
+              },
+            });
+          
+            const result = await response.json();
+          
+            if (!response.ok) {
+              console.log(result.error);
+              setError(result.error);
+            } else {
+              setError("");
+              console.log(result);
+              // navigate("/all-posts");
             }
-        
-        });
-
-        const result = await response.json();
-        if (!result.ok) {
-            console.log(result.error);
-            setError(result.error)
-        }
-        if (result.ok) {
-            setError("");
-            console.log(result);
-            
-            // navigate("/all-posts");
-        }
+          } catch (error) {
+            console.error("Error:", error);
+            // Handle the error appropriately, e.g., setError(error.message);
+          }
+          
 
     }
 
