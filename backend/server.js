@@ -25,6 +25,6 @@ mongoose
 
     app.use("/api/user", userRoute);
     app.use("/api/register", userRegister);
-    app.use("/api/contactUs", userRegister);
+    app.use("/api/contactUs", contactUs);
 
 // app.listen(4000) 
