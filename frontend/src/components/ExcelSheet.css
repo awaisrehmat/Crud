@@ -1,0 +1,71 @@
+/* ExcelSheet.css */
+.excel-sheet {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .tab-container {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background-color: #f4f4f4;
+  }
+  
+  .tab.active {
+    background-color: white;
+  }
+  
+  .content {
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Sheet1Content.css */
+.sheet-content {
+    overflow: auto;
+    max-height: 500px; /* Adjust the height as needed */
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .excel-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .excel-table th,
+  .excel-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .fixed-cell {
+    position: sticky;
+    left: 0;
+    background-color: #f4f4f4;
+    z-index: 1;
+  }
+  .editable-input {
+    width: 80px; /* Adjust as needed */
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .disabled-input {
+    width: 80px; /* Adjust as needed */
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+  }  
+
+  

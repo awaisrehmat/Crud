@@ -8,18 +8,22 @@ import Posts from './components/Posts';
 import Update from './components/Update';
 import Login from './components/Login';
 import ContactForm from './components/ContactUs/ContactUs';
+import Testing from './components/testing';
+import Test from './components/test'
 
 function App() {
   return (
     <>
       <Navbar />
-      <ContactForm />
+      {/* <ContactForm /> */}
       <Routes>
+      <Route path='/cdf' element={<Test />}/>  
       <Route path='/' element={<Home />}/>
       <Route path='/all-posts' element={<Posts />} />
       <Route path='/update' element={<Create/>} />
       <Route path='/:id' element={<Update />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/testing' element={<Testing />} />
 
       </Routes>
       

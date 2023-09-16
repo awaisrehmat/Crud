@@ -1,0 +1,11 @@
+.icon-options {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .icon-options .selected {
+    border: 1px solid #0f0f0f; /* Border style for the selected icon */
+    border-radius: 10px;
+}
+
+  
